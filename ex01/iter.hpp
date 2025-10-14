@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:55:40 by maw               #+#    #+#             */
-/*   Updated: 2025/10/14 01:10:00 by maw              ###   ########.fr       */
+/*   Updated: 2025/10/14 16:06:21 by masase           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 # define ITER_HPP
 
-void iter(char *array, const int length, void *f)
+template <typename T>
+void iter(T *array, const int length, void *f)
 {
+    int i = 0;
+    while (array[i])
+    {
+        
+    }
 
 }
 
