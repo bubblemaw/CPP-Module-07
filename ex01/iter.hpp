@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masase <masase@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 00:55:40 by maw               #+#    #+#             */
-/*   Updated: 2025/10/16 14:57:17 by masase           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:22:29 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,29 @@
 # include <iostream>
 
 template <typename T>
-void _13(T *array, const int length_2)
+void plus_13(T& element)
 {
-    std::cout << "in the function pointers" << std::endl;
+    element += 13;
 }
 
-// template <typename T>
-// void iter(T *array, const int length, void (*f)(T *array, const int length_2))
-// {
-//     f(array, length);
-// }
+template <typename T>
+void display_array(T& element)
+{
+    std::cout << element << ' ';
+} 
+
+template <typename T>
+void iter(T *array, const int size, void (*f)(T&))
+{
+	for(int i = 0; i < size; i++)
+		f(array[i]);
+}
+
+template <typename T>
+void iter(const T *array, const int size, void (*f)(const T&))
+{
+	for(int i = 0; i < size; i++)
+		f(array[i]);
+}
 
 #endif
