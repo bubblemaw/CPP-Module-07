@@ -13,11 +13,8 @@
 #include "Array.hpp"
 
 template <typename T>
-Array<T>::Array()
+Array<T>::Array(void) :array(NULL), _size(0)
 {
-	std::cout << "Default template constructor" << std::endl;
-	array = new T[5];
-	_size = 5;
 }
 
 template <typename T>
@@ -59,6 +56,21 @@ Array<T>& Array<T>::operator=(const Array &obj)
 template <typename T>
 int	Array<T>::size() const
 {
-	return (this->size);
+	return (this->_size);
+}
+
+template <typename T>
+T& Array<T>::operator[](int idx)
+{
+	if (idx >= _size)
+		throw std::exception();
+	return (this->array[idx]);
+}
+template <typename T>
+T Array<T>::operator[](int idx) const
+{
+	if (idx >= _size)
+		throw std::exception();
+	return (this->array[idx]);
 }
 

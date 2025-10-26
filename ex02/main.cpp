@@ -14,12 +14,39 @@
 
 int main()
 {
-	// int * a = new int();
-	// std::cout << *a << std::endl;
-	// int *p = new int[7];
-	// std::cout << "Length of array = " << (sizeof(p)/sizeof(*p)) << std::endl;
-	Array<int> six(8);
-
+	std::cout << "* INT ARRAY *" << std::endl;
+	Array<int> six(5);
+	std::cout << "The size of the array is: " << six.size() << std::endl;
+	try
+	{
+		six[4] = 6;
+		std::cout << six[4] << std::endl;			
+	}
+	catch(...)
+	{
+		std::cout << "out of bound" <<  std::endl;
+	}
+	std::cout << "* EMPTY PARAMETERS *" << std::endl;	
+	Array<int> flo;	
+	try
+	{
+		std::cout << flo[0] << std::endl;
+	}
+	catch (...)
+	{
+		std::cout << "out of bound" <<  std::endl;
+	}
+	std::cout << "* DOUBLE ARRAY *" << std::endl;	
+	Array<double> deux(2);
+	try
+	{
+		deux[1] = 909.343434;
+		std::cout << deux[1] << std::endl;		
+	}
+	catch(...)
+	{
+		std::cout << "out of bound" <<  std::endl;
+	}	
 	
 	return (0);
 }

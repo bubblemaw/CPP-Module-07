@@ -12,8 +12,8 @@
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
-# include <iostream> 
-
+# include <iostream>
+# include <exception>
 
 template <typename T>
 class Array
@@ -22,12 +22,16 @@ class Array
 		T *array;
 		int _size;
 	public:
-		Array();
+		Array(void);
 		Array(unsigned int n);
 		Array(const Array &obj);
 		~Array();
 		Array& operator=(const Array &obj);
 		int size() const;
+		T operator[](int idx) const;
+		T& operator[](int idx);		
 };
+
+# include "Array.tpp"
 
 #endif
