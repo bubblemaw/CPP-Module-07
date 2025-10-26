@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.tpp                                          :+:      :+:    :+:   */
+/*   Array.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:06:50 by maw               #+#    #+#             */
-/*   Updated: 2025/10/23 16:03:26 by maw              ###   ########.fr       */
+/*   Updated: 2025/10/25 17:12:16 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Array<T>::Array()
 {
 	std::cout << "Default template constructor" << std::endl;
 	array = new T[5];
+	_size = 5;
 }
 
 template <typename T>
@@ -24,12 +25,14 @@ Array<T>::Array(unsigned int n)
 {
 	std::cout << "int n template constructor" << std::endl;
 	array = new T[n];
+	_size = n;
 }
 
 template <typename T>
 Array<T>::Array(const Array &obj)
 {
 	std::cout << "Default template copy constructor" << std::endl;
+	*this = obj;
 }
 
 template <typename T>
@@ -42,5 +45,20 @@ Array<T>::~Array()
 template <typename T>
 Array<T>& Array<T>::operator=(const Array &obj)
 {
-	std::cout << "Assignement operator" << std::endl;	
+	std::cout << "Assignement operator" << std::endl;
+	if (*this != obj)
+	{
+		this->array = new T[obj._size];
+		for (int i = 0; i < obj._size; i++)
+			this->array[i] = obj.array[i];
+		this->_size = obj._size;
+	}
+	return (*this);
 }
+
+template <typename T>
+int	Array<T>::size() const
+{
+	return (this->size);
+}
+
