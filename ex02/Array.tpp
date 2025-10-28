@@ -36,20 +36,17 @@ template <typename T>
 Array<T>::~Array()
 {
 	std::cout << "Default destructor" << std::endl;
-	delete[] array;
+	delete this->array;
 }
 
 template <typename T>
 Array<T>& Array<T>::operator=(const Array &obj)
 {
 	std::cout << "Assignement operator" << std::endl;
-	if (*this != obj)
-	{
-		this->array = new T[obj._size];
-		for (int i = 0; i < obj._size; i++)
-			this->array[i] = obj.array[i];
-		this->_size = obj._size;
-	}
+	this->array = new T[obj._size];
+	for (int i = 0; i < obj._size; i++)
+		this->array[i] = obj.array[i];
+	this->_size = obj._size;
 	return (*this);
 }
 

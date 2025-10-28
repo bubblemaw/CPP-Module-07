@@ -18,7 +18,7 @@
 // 	int num2 = 12;
 // 	std::cout << "* BEFORE SWAP *" << std::endl;
 // 	std::cout << num1 << " : " << num2 << std::endl;
-// 	b_swap(num1, num2);
+// 	::swap(num1, num2);
 // 	std::cout << "* AFTER SWAP *" << std::endl;
 // 	std::cout << num1 << " : " << num2 << std::endl;
 // 	std::cout << "* MINIMUM *" << std::endl;
