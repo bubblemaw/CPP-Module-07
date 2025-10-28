@@ -36,7 +36,7 @@ template <typename T>
 Array<T>::~Array()
 {
 	std::cout << "Default destructor" << std::endl;
-	delete this->array;
+	delete [] this->array;
 }
 
 template <typename T>
@@ -59,14 +59,14 @@ int	Array<T>::size() const
 template <typename T>
 T& Array<T>::operator[](int idx)
 {
-	if (idx >= _size)
+	if (idx >= _size || idx < 0)
 		throw std::exception();
 	return (this->array[idx]);
 }
 template <typename T>
 T Array<T>::operator[](int idx) const
 {
-	if (idx >= _size)
+	if (idx >= _size || idx < 0)
 		throw std::exception();
 	return (this->array[idx]);
 }
